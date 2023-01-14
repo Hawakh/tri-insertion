@@ -1,0 +1,29 @@
+PROCEDURE insertion(var arr: ARRAY_OF INTEGER)
+VAR
+    i,j,n,current: INTEGER;
+    
+BEGIN
+   n=arr.length;
+    
+    FOR i FROM 1 TO n-1  DO
+        
+        current:= arr[i]
+        j:=i-1
+    WHILE (j>=0 and arr[j]> current ) DO
+        
+        arr[j+1]= arr[j];
+        j:=j-1;
+    END_WHILE
+    arr[j+1]= current
+    END_FOR
+END
+ ALGORITHM card
+ VAR
+    tab:ARRAY_OF_integer;
+ BEGIN
+    n=tab.length;
+    write("donner moi les éléments du tableau")
+    read(tab);
+    insertion(arr);
+    write("le tableau est trié:",arr)
+ END
